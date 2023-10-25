@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="details">
+    <app-title title="Login"></app-title>
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+      <text-input
+        [control]="fc.email"
+        [showErrorWhen]="isSubmitted"
+        type="email"
+        label="Email"
+      ></text-input>
+      <text-input
+        [control]="fc.password"
+        [showErrorWhen]="isSubmitted"
+        type="password"
+        label="Password"
+      ></text-input>
+
+      <default-button text="Login"></default-button>
+
+      <div class="register">
+        New User? &nbsp;
+        <a routerLink="/register" [queryParams]="{returnUrl:returnUrl}">
+          Register Here</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <input-container label="Email">
+         anything we gonna put it here is gonna be placed inside ng content in input-container.html
+        <input
+          type="email"
+          placeholder="Enter your email"
+          formControlName="email"
+        />
+       
+        <div class="error-list" *ngIf="fc.email.errors && isSubmitted">
+          <div *ngIf="fc.email.errors.required">Should not be empty</div>
+          <div *ngIf="fc.email.errors.email">email is not correct</div>
+        </div> 
+        <input-validation
+          [control]="fc.email"
+          [showErrorWhen]="isSubmitted"
+        ></input-validation>
+      </input-container> -->
+
+<!--<div class="input-container">
+        <label>password</label>
+        <input
+          type="password"
+          placeholder="Enter your password"
+          formControlName="password"
+        />
+      </div>
+      <div class="error-list" *ngIf="fc.password.errors && isSubmitted">
+        <div *ngIf="fc.password.errors.required">Should not be empty</div>
+      </div>-->

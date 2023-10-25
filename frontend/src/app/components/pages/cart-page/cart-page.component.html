@@ -1,0 +1,53 @@
+<app-title title="Cart Page" margin="1.5rem 0 0 2.5rem"></app-title>
+<!--it should be visible when the cart is nul or undifind-->
+<app-not-found
+[visible]="!cart || !cart.items.length"
+notFoundMessage="Cart Page Is Empty!"
+resetLinkText="Go To Home Page"
+></app-not-found>
+<div class="container" *ngIf="cart && cart.items.length">
+  <ul>
+    <li *ngFor="let cartItem of cart.items">
+      <div>
+        <img [src]="cartItem.food.imageUrl" [alt]="cartItem.food.name" />
+      </div>
+
+      <div>
+        <a routerLink="/food/{{ cartItem.food.id }}">{{
+          cartItem.food.name
+        }}</a>
+      </div>
+      <div>
+        <!--attribute binding ([value]) is used to set the selected value of 
+        the <select> element to the value of cartItem.quantity.-->
+
+        <!--quantitySelect.value: This retrieves the currently selected value 
+        from the <select> element using the template reference variable #quantitySelect.-->
+        <select
+          #quantitySelect
+          [value]="cartItem.quantity"
+          (change)="changeQuantity(cartItem, quantitySelect.value)"
+        >
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div>
+        {{ cartItem.price | currency }}
+      </div>
+      <button class="remove-button" (click)="removeFromCart(cartItem)">
+        Remove
+      </button>
+    </li>
+  </ul>
+  <div class="checkout">
+    <div>
+      <div class="foods-count">{{ cart.totalCount }}</div>
+      <div class="total-price">{{ cart.totalPrice | currency }}</div>
+    </div>
+    <a routerLink="/checkout">Proceed to Checkout</a>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap"); 
+//It selects all elements on the page
+*{
+    box-sizing: border-box;
+}
+//targets the <html> element, which is the root element of an HTML document
+html{
+    font-size: 16px;
+}
+
+html,button{
+    font-family: "Quicksand","sans-serif";
+}
+// targets the <body> element, which represents the main content area of an HTML page
+body{
+    margin:0;
+}
+
+a{
+    text-decoration: none;
+}

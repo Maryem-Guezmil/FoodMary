@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "moduleResolution": "node",
+      "strict": true,
+      "outDir": "./built",
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true
+    },
+    //all ts inside src folder gonna be transpiled into js 
+    "include": ["src/**/*"],
+}
