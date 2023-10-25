@@ -5,9 +5,14 @@ A website for selling delicious food online
 ## Running Locally
 
 1. clone this repo
-2. cd foodmary
-3. npm i
+2. cd frontend
+3. npm i --force
 4. ng serve -o
+   
+Then open another new terminal 
+1.  cd backend
+2. npm i --force
+3. npm start
 
 ## Tech Stack
 
